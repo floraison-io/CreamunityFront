@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奶油社区</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">🍰 小aの奶油社区</h1>
+            <div id="walletSection" class="wallet-section">
+                <div id="loginView">
+                    <input type="password" id="privateKeyInput" class="input-privatekey" placeholder="粘贴私钥登录">
+                    <button id="createWalletBtn" class="btn btn-secondary">创建钱包</button>
+                    <button id="loginBtn" class="btn btn-primary">登录</button>
+                </div>
+                <div id="walletInfo" class="wallet-info" style="display: none;">
+                    <div id="walletDisplay" class="wallet-display">
+                        <span id="userAddress">0x...</span>
+                        <span id="creamBalance">0.0</span><strong> CRM</strong>
+                    </div>
+                    <div id="walletDropdown" class="wallet-dropdown">
+
+                        <a href="#" id="profileAction" class="dropdown-item">
+                            <i class="fa-solid fa-user"></i>
+                            <span>个人中心</span>
+                        </a>
+                        
+                        <div class="dropdown-item" id="transferAction">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>转账</span>
+                        </div>
+                        <div class="dropdown-item" id="creamMachineAction">
+                             <i class="fa-solid fa-cookie-bite"></i>
+                            <span>奶油机</span>
+                        </div>
+                        <hr>
+                        <div class="dropdown-item" id="logoutBtn">
+                             <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>退出登录</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div id="postSection" class="post-section" style="display: none;">
+                <textarea id="messageInput" rows="4" placeholder="投喂奶油一枚，就可以发言啦..." maxlength="150"></textarea>
+                <div class="post-actions">
+                    <span id="charCounter">0/150</span>
+                    <button id="postBtn" class="btn btn-primary">发布留言</button>
+                </div>
+            </div>
+
+            <div id="boardSection" class="board-section">
+                <h2><i class="fa-solid fa-comments"></i> 留言板</h2>
+                <div id="messagesContainer">
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="transferModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" id="closeTransferModal">&times;</button>
+            <h2>奶油币转账</h2>
+            <div class="form-group">
+                <label for="recipientAddressInput">收款人地址:</label>
+                <input type="text" id="recipientAddressInput" placeholder="粘贴收款人的 0x... 地址">
+            </div>
+            <div class="form-group">
+                <label for="amountInput">转账金额:</label>
+                <input type="number" id="amountInput" placeholder="例如: 100">
+            </div>
+            <button id="transferBtn" class="btn btn-primary btn-full-width">确认转账</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js" type="application/javascript" defer></script>
+    <script src="../app.js" defer></script>
+
+</body>
+</html>

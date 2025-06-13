@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="/base/" class="logo-link"><h1 class="logo">🍰 小aの奶油社区</h1></a>
+            <a href="/base/" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> 返回留言板</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="profile-card">
+                <h2 class="profile-card-title">用户信息</h2>
+                <div class="profile-card-body">
+                    <div class="profile-item">
+                        <span class="profile-item-label">钱包地址:</span>
+                        <div class="address-container">
+                            <span id="profileAddress" class="profile-item-value">加载中...</span>
+                            <button id="copyAddressBtn" class="copy-btn btn-tip" title="复制完整地址">复制</button>
+                        </div>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-item-label">奶油币余额:</span>
+                        <span id="profileCreamBalance" class="profile-item-value">加载中...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-item-label">首次发言时间:</span>
+                        <span id="firstPostTime" class="profile-item-value">加载中...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="board-section">
+                <h2><i class="fa-solid fa-feather-pointed"></i> TA 的所有留言</h2>
+                <div id="userMessagesContainer">
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js" type="application/javascript" defer></script>
+    <script src="profile.js" defer></script>
+</body>
+</html>
