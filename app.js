@@ -797,7 +797,7 @@ function setAppBusy(isBusy) {
     walletDropdown.classList.remove('active');
 
     try {
-        const response = await fetch('http://gas.floraison.io/request-cream', {
+        const response = await fetch('https://gas.floraison.io/request-cream', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userAddress: signer.address }),
@@ -825,7 +825,7 @@ function setAppBusy(isBusy) {
 
     async function requestGasSubsidy(actionType) {
         console.log(`正在请求Gas支援 (类型: ${actionType})...`);
-        const response = await fetch('http://gas.floraison.io/request-gas', {
+        const response = await fetch('https://gas.floraison.io/request-gas', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
