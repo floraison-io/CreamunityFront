@@ -1033,8 +1033,9 @@ function setAppBusy(isBusy) {
     loginBtn.addEventListener('click', () => login(privateKeyInput.value));
     createWalletBtn.addEventListener('click', () => {
         const newWallet = ethers.Wallet.createRandom();
+        navigator.clipboard.writeText(newWallet.privateKey)
         //alert(`已为你创建新钱包！\n\n地址: ${newWallet.address}\n\n**请务必备份好你的私钥！这是唯一凭证！**\n\n${newWallet.privateKey}`);
-        alert(`请务必备份好你的私钥！不然会丢掉奶油币的 ::>_<::\n\n${newWallet.privateKey}`);
+        alert(`请务必备份好你的私钥，不可以给别人看！不然会丢掉奶油币的 ::>_<::\n\n${newWallet.privateKey}\n\n私钥已复制到剪贴板，快收好~`);
         privateKeyInput.value = newWallet.privateKey;
     });
     logoutBtn.addEventListener('click', logout);
